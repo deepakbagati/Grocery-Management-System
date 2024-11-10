@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+    <!-- Navbar -->
+
+    <!-- Intro -->
+    <div class="container flex flex-row w-[90vw] my-5 m-auto justify-between align-middle">
+        <div class="right mx-10 my-auto">
+            <h1 class="my-2 text-2xl font-semibold text-sky-700">{{message}}! &#128512;</h1>
+            <h1 class="my-2 text-5xl font-bold text-[#F98821]" data-aos="zoom-in" data-aos-duration="1000">Make Healthy Life With Fresh Grocery</h1>
+            <p class="text-xl font-medium text-green-800" data-aos="fade-up">Freshness and Quality Delivered to Your Doorstep: Shop with Us Today!</p>
+            <button class="text-lg my-1 bg-[#00A02D] p-1 px-3 rounded-3xl text-white" data-aos-delay="500" data-aos="zoom-in">Shop Now</button>
+        </div>
+        <div class="left">
+            <img src="/static/Photos/grocery - Copy.jpg" alt="">
+        </div>
+    </div>
+
+    
+    <!-- Our Categories -->
+    <h1 class="mb-10 text-4xl text-center font-semibold text-[#F98821]">Our Categories</h1>
+    <div class="categories grid grid-cols-4 gap-3 w-[85vw] m-auto mb-10">
+        {% for category in categories%}
+        <div class="caty shadow-lg border rounded-3xl" data-aos="zoom-in">
+            <img src="/media/{{category.category_img}}" alt="" class="w-[20rem]">
+            <p class="text-center font-semibold text-xl">{{category.category_title}}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+{% endblock %}

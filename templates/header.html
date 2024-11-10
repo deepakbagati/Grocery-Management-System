@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/static/script.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <div class="nav flex justify-between w-full h-16 shadow-xl p-2">
+        <div class="part1 flex items-center"><img class="w-32 mx-10" src="/static/Photos/Grocery STORE logo. png.png" alt=""></div>
+    
+        <div class="part2 flex gap-12 items-center font-semibold text-lg text-green-800">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'all_products' %}">Products</a>
+            <a href="#home">Features</a>
+            <a href="#home">Contact</a>
+        </div>
+    
+        <div class="part3 flex gap-4 items-center p-1">
+            <input class="w-[200px] outline-1 border-2 px-2 h-8 rounded-md" type="text" placeholder="Search here">
+            <img class="w-[2rem]" src="/static/Photos/search.png" alt="">
+            <a href="{% url 'cart' %}"><img class="w-[2rem]" src="/static/Photos/cart.png" alt=""></a>
+
+            <button class="text-lg bg-[#F98821] p-1 px-3 rounded-xl text-white"><a href="{% url 'logout' %}">Logout</a></button>
+        </div>
+    </div>
+</body>
+<script>
+    AOS.init();
+</script>

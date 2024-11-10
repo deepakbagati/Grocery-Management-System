@@ -1,0 +1,28 @@
+{% extends "base.html"%}
+{% block content %}
+
+<!-- Our Categories -->
+<h1 class="mb-10 my-10 text-4xl text-center font-semibold text-[#F98821]">Products</h1>
+<div class="categories grid grid-cols-4 gap-3 w-[85vw] m-auto mb-10">
+    {% for Product in products %}
+    <div class="caty shadow-lg border rounded-3xl">
+        <div></div>
+        <img src="/media/{{Product.product_img}}" alt="" class="w-[20rem] h-[22rem] object-cover items-center">
+        <div class="flex justify-between items-center">
+            <div class="my-2">
+                <p class="text-start font-semibold text-[#F98821] px-2 text-2xl">{{Product.product_title}}</p>
+                <p class="text-start font-semibold text-blue-700 text-lg px-2 py-1">{{Product.product_price}} Rs</p>
+            </div>
+            <div>
+                <form method="POST" action="{% url 'add_to_cart' product_id=Product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="justify-end px-2 mx-2 bg-[#F98821] h-10 rounded-md text-white">Add to Cart</button>
+                </form>
+            </div>
+        </div>    
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
